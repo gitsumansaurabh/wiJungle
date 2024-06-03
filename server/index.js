@@ -7,9 +7,6 @@ const dataRouter = require("./routes/Data.router");
 const path = require("path");
 
 server.use(express.static(path.resolve(__dirname, "build")));
-server.get("*", (req, res) =>
-  res.sendFile(path.resolve("build", "index.html"))
-);
 
 async function connectDB() {
   await mongoose.connect(process.env.MONGODB_URL);
